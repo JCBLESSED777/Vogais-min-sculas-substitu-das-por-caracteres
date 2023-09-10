@@ -1,0 +1,29 @@
+# Função para substituir as vogais minúsculas na string
+def substituir_vogais(texto):
+    substituicoes = {
+        'a': '@',
+        'e': '&',
+        'i': '|',
+        'o': '0',
+        'u': '*'
+    }
+
+    texto_modificado = ""
+
+    for letra in texto:
+        if letra.islower() and letra in substituicoes:
+            texto_modificado += substituicoes[letra]
+        else:
+            texto_modificado += letra
+
+    return texto_modificado
+
+# Solicita ao usuário uma string de entrada
+entrada = input("Digite uma frase ou palavra: ")
+
+# Chama a função para substituir as vogais minúsculas
+saida = substituir_vogais(entrada)
+
+# Exibe o resultado
+print("Texto com as vogais minúsculas subtituídas por caracteres:")
+print(saida)
